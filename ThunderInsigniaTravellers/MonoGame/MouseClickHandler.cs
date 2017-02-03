@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using ThunderInsigniaTravellers.Map;
+using ThunderInsigniaTravellers.Engine;
 
 namespace ThunderInsigniaTravellers.MonoGame
 {
@@ -23,7 +24,11 @@ namespace ThunderInsigniaTravellers.MonoGame
             if (state.LeftButton == ButtonState.Released && prevState.LeftButton == ButtonState.Pressed)
             {
                 var p = state.Position;
-                onClick(new Tile(p.X / 32, p.Y / 32));
+                var game = new GameInstance();
+                var height = game.Graphics.Viewport.Bounds.Height;
+                var width = game.Graphics.Viewport.Bounds.Width;
+                if (p.X > 0 && p.X < width && p.Y > 0 && p.Y < height)
+                    onClick(new Tile(p.X / 32, p.Y / 32));
             }
 
             prevState = state;

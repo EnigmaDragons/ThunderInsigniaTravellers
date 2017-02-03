@@ -8,7 +8,7 @@ namespace ThunderInsigniaTravellers.Engine
         public Vector2 target;
 
         public float slowingRadius = 25;
-        public float maxSpeed = 250;
+        public float maxSpeed = 100;
 
         public PlayerController(Vector2 initialPosition)
         {

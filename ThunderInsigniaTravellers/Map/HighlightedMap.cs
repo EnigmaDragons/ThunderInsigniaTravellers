@@ -13,10 +13,12 @@ namespace ThunderInsigniaTravellers.Map
         private readonly List<Tile> _tiles = new List<Tile>();
         private Texture2D _highlight;
         private MouseClickHandler _mouseHandler;
+        private PlayerCommands _commands;
 
         public HighlightedMap(Map map)
         {
-            _mouseHandler = new MouseClickHandler(x => new PlayerCommands(this).Select(x));
+            _commands = new PlayerCommands(this);
+            _mouseHandler = new MouseClickHandler(x => _commands.Select(x));
             _map = map;
         }
 
