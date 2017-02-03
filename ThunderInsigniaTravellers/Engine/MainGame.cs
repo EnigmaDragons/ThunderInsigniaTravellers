@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ThunderInsigniaTravellers.Engine;
+using ThunderInsigniaTravellers.Views;
 
 namespace ThunderInsigniaTravellers
 {
@@ -18,6 +19,7 @@ namespace ThunderInsigniaTravellers
 
         protected override void Initialize()
         {
+            _currentView = new CharacterSampleView(this);
             base.Initialize();
         }
 
