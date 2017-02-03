@@ -26,6 +26,7 @@ namespace ThunderInsigniaTravellers.Player
         private void SelectCharacterAt(Tile location)
         {
             _selectedCharacter = _map.GetMap().GetOptionalCharacter(location);
+            _selectedTile = location;
             if (CharacterIsSelected)
                 _map.SetHighlights(new List<Tile>
                 {

@@ -20,13 +20,7 @@ namespace ThunderInsigniaTravellers.Engine
         protected override void Initialize()
         {
             new GameInstance().SetGame(this);
-            _currentView = new Map.Map();
-            var asMap = (Map.Map)_currentView;
-            asMap.Put(new Gaius(), new Tile(1, 1));
-            asMap.Put(new Gregor(), new Tile(2, 2));
-            asMap.Put(new PegasusEnemy(), new Tile(3, 3));
-            asMap.Put(new ArcherEnemy(), new Tile(4, 4));
-
+            _currentView = new HighlightedMap(Map.Map.Create());
             base.Initialize();
             IsMouseVisible = true;
         }

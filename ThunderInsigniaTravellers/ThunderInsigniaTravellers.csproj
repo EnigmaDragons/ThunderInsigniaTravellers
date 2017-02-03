@@ -56,6 +56,7 @@
     <Compile Include="Map\HighlightedMap.cs" />
     <Compile Include="Map\Map.cs" />
     <Compile Include="Engine\ScreenPosition.cs" />
+    <Compile Include="MonoGame\MouseClickHandler.cs" />
     <Compile Include="Tiles\Grass.cs" />
     <Compile Include="Tiles\Trees.cs" />
     <Compile Include="Engine\PlayerController.cs" />

@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ThunderInsigniaTravellers.Engine;
 using ThunderInsigniaTravellers.MonoGame;
+using ThunderInsigniaTravellers.Player;
 
 namespace ThunderInsigniaTravellers.Map
 {
@@ -11,9 +12,11 @@ namespace ThunderInsigniaTravellers.Map
         private readonly Map _map;
         private readonly List<Tile> _tiles = new List<Tile>();
         private Texture2D _highlight;
+        private MouseClickHandler _mouseHandler;
 
         public HighlightedMap(Map map)
         {
+            _mouseHandler = new MouseClickHandler(x => new PlayerCommands(this).Select(x));
             _map = map;
         }
 
@@ -31,6 +34,7 @@ namespace ThunderInsigniaTravellers.Map
 
         public void Update(GameTime deltaTime)
         {
+            _mouseHandler.Update(deltaTime);
             _map.Update(deltaTime);
         }
 

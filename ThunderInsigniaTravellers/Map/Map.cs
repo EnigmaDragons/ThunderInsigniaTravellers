@@ -6,6 +6,8 @@ using ThunderInsigniaTravellers.Characters;
 using ThunderInsigniaTravellers.Engine;
 using ThunderInsigniaTravellers.Tiles;
 using System.Linq;
+using ThunderInsigniaTravellers.MonoGame;
+using ThunderInsigniaTravellers.Player;
 
 namespace ThunderInsigniaTravellers.Map
 {
@@ -67,7 +69,19 @@ namespace ThunderInsigniaTravellers.Map
 
         public Character GetOptionalCharacter(Tile location)
         {
-            return internalMap[location.X, location.Y].OfType<Character>().FirstOrDefault();
+            if (location.X > 0 && location.Y > 0)
+                return internalMap[location.X, location.Y].OfType<Character>().FirstOrDefault();
+            return null;
+        }
+
+        public static Map Create()
+        {
+            var map = new Map();
+            map.Put(new Gaius(), new Tile(1, 1));
+            map.Put(new Gregor(), new Tile(2, 2));
+            map.Put(new PegasusEnemy(), new Tile(3, 3));
+            map.Put(new ArcherEnemy(), new Tile(4, 4));
+            return map;
         }
     }
 }
