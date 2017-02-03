@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ThunderInsigniaTravellers.Engine;
+using ThunderInsigniaTravellers.Map;
 using ThunderInsigniaTravellers.MonoGame;
 
 namespace ThunderInsigniaTravellers.Characters

@@ -1,27 +1,54 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using ThunderInsigniaTravellers.Characters;
 using ThunderInsigniaTravellers.Map;
 
 namespace ThunderInsigniaTravellers.Player
 {
     public class PlayerCommands
     {
-        public PlayerCommands()
+        private readonly HighlightedMap _map;
+
+        private Tile _selectedTile;
+        private Character _selectedCharacter;
+
+        public PlayerCommands(HighlightedMap map)
         {
-            
+            _map = map;
         }
 
-        public void SelectCharacterAt(Tile tile)
+        public void Select(Tile location)
         {
-            
+            if (CharacterIsSelected)
+                MoveSelectedCharacterTo(location);
+            SelectCharacterAt(location);
         }
 
-        public void MovedSelectedCharacterTo(Tile tile)
+        private void SelectCharacterAt(Tile location)
         {
-            
+            _selectedCharacter = _map.GetMap().GetOptionalCharacter(location);
+            if (CharacterIsSelected)
+                _map.SetHighlights(new List<Tile>
+                {
+                    location.Plus(-1, 0),
+                    location.Plus(1, 0),
+                    location.Plus(0, -1),
+                    location.Plus(0, 1),
+                });
         }
+
+        private void MoveSelectedCharacterTo(Tile destination)
+        {
+            _map.GetMap().Move(_selectedCharacter, _selectedTile, destination);
+            ClearSelection();
+        }
+
+        private void ClearSelection()
+        {
+            _selectedTile = null;
+            _selectedCharacter = null;
+        }
+
+        public bool CharacterIsSelected => _selectedCharacter != null && _selectedTile != null;
     }
 }
+

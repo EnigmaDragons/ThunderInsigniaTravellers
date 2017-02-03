@@ -2,10 +2,9 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ThunderInsigniaTravellers.Characters;
-using ThunderInsigniaTravellers.Engine;
-using ThunderInsigniaTravellers.Views;
+using ThunderInsigniaTravellers.Map;
 
-namespace ThunderInsigniaTravellers
+namespace ThunderInsigniaTravellers.Engine
 {
     public class MainGame : Game, INavigator
     {
@@ -21,8 +20,8 @@ namespace ThunderInsigniaTravellers
         protected override void Initialize()
         {
             new GameInstance().SetGame(this);
-            _currentView = new Map();
-            var asMap = (Map)_currentView;
+            _currentView = new Map.Map();
+            var asMap = (Map.Map)_currentView;
             asMap.Put(new Gaius(), new Tile(1, 1));
             asMap.Put(new Gregor(), new Tile(2, 2));
             asMap.Put(new PegasusEnemy(), new Tile(3, 3));

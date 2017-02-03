@@ -1,5 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using ThunderInsigniaTravellers.Engine;
+﻿using ThunderInsigniaTravellers.Engine;
+using ThunderInsigniaTravellers.Map;
 
 namespace ThunderInsigniaTravellers.Characters
 {

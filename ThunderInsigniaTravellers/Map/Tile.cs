@@ -11,5 +11,10 @@ namespace ThunderInsigniaTravellers.Map
             X = x;
             Y = y;
         }
+
+        public Tile Plus(int x, int y)
+        {
+            return new Tile(X + x, Y + y);
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace ThunderInsigniaTravellers.Views
 
         public CharacterSampleView()
         {
-            _character = new Highlighted(new Gaius(), new EnemyHighlightColor().Get());
+            _character = new Gaius();
         }
 
         public void LoadContent()

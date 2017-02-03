@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using ThunderInsigniaTravellers.Map;
-using ThunderInsigniaTravellers.Tiles;
 using ThunderInsigniaTravellers.Characters;
+using ThunderInsigniaTravellers.Engine;
+using ThunderInsigniaTravellers.Tiles;
+using System.Linq;
 
-namespace ThunderInsigniaTravellers.Engine
+namespace ThunderInsigniaTravellers.Map
 {
     public class Map : IGameView
     {
@@ -62,6 +63,11 @@ namespace ThunderInsigniaTravellers.Engine
             for (int row = 0; row < 16; row++)
                 for (int column = 0; column < 16; column++)
                     internalMap[row, column].ForEach(action);
+        }
+
+        public Character GetOptionalCharacter(Tile location)
+        {
+            return internalMap[location.X, location.Y].OfType<Character>().FirstOrDefault();
         }
     }
 }
