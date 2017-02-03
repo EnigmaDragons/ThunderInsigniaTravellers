@@ -51,7 +51,11 @@
     <Compile Include="Engine\IGameView.cs" />
     <Compile Include="Engine\INavigator.cs" />
     <Compile Include="Engine\MainGame.cs" />
-    <Compile Include="Views\GrassLands.cs" />
+    <Compile Include="Map\Map.cs" />
+    <Compile Include="Engine\ScreenPosition.cs" />
+    <Compile Include="Map\Tile.cs" />
+    <Compile Include="Tiles\Grass.cs" />
+    <Compile Include="Tiles\Trees.cs" />
     <Compile Include="MonoGame\LoadedTexture.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
