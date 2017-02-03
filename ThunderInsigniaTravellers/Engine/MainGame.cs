@@ -22,6 +22,7 @@ namespace ThunderInsigniaTravellers
             new GameInstance().SetGame(this);
             _currentView = new Map();
             base.Initialize();
+            IsMouseVisible = true;
         }
 
         protected override void LoadContent()

@@ -1,21 +1,20 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using ThunderInsigniaTravellers.Engine;
 using ThunderInsigniaTravellers.MonoGame;
 
 namespace ThunderInsigniaTravellers.Characters
 {
-    public abstract class SingleFrameCharacter : IGameObject
+    public abstract class SingleFrameCharacter : Character
     {
-        private readonly Game _game;
         private readonly string _spriteName;
 
         private Texture2D _sprite;
+        private Vector2 _position;
 
-        protected SingleFrameCharacter(Game game, string spriteName)
+        protected SingleFrameCharacter(string spriteName)
         {
-            _game = game;
             _spriteName = spriteName;
+            _position = new Vector2(0, 0);
         }
 
         public void LoadContent()
@@ -34,7 +33,12 @@ namespace ThunderInsigniaTravellers.Characters
 
         public void Draw(SpriteBatch sprites)
         {
-            sprites.Draw(_sprite, new Vector2(0, 0));
+            sprites.Draw(_sprite, _position);
+        }
+
+        public void SetPosition(Vector2 vector)
+        {
+            _position = vector;
         }
     }
 }

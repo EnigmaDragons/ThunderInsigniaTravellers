@@ -2,18 +2,17 @@
 using Microsoft.Xna.Framework.Graphics;
 using ThunderInsigniaTravellers.Characters;
 using ThunderInsigniaTravellers.Engine;
+using ThunderInsigniaTravellers.MonoGame;
 
 namespace ThunderInsigniaTravellers.Views
 {
     public sealed class CharacterSampleView : IGameView
     {
-        private readonly Game _game;
-        private readonly IGameObject _character;
+        private readonly Character _character;
 
-        public CharacterSampleView(Game game)
+        public CharacterSampleView()
         {
-            _game = game;
-            _character = new Gaius(game);
+            _character = new Highlighted(new Gaius(), new EnemyHighlightColor().Get());
         }
 
         public void LoadContent()
@@ -33,7 +32,7 @@ namespace ThunderInsigniaTravellers.Views
 
         public void Draw(SpriteBatch sprites)
         {
-            _game.GraphicsDevice.Clear(Color.Black);
+            new ViewBackgroundColor(Color.Black).Draw();
             _character.Draw(sprites);
         }
     }

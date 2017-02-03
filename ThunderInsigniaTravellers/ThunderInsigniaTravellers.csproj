@@ -24,7 +24,6 @@
     <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Noah\AppData\Local\Temp\vs66B7.tmp\x86\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -34,15 +33,19 @@
     <DefineConstants>TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Noah\AppData\Local\Temp\vs66B7.tmp\x86\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Characters\EnemyHighlightColor.cs" />
+    <Compile Include="Characters\PlayerHighlightColor.cs" />
     <Compile Include="Engine\GameInstance.cs" />
+    <Compile Include="Engine\GraphicsDeviceInstance.cs" />
     <Compile Include="Engine\IGame.cs" />
     <Compile Include="Characters\ArcherEnemy.cs" />
+    <Compile Include="Characters\Character.cs" />
+    <Compile Include="Characters\Highlighted.cs" />
     <Compile Include="Characters\Gaius.cs" />
     <Compile Include="Characters\Gregor.cs" />
     <Compile Include="Characters\PegasusEnemy.cs" />
@@ -56,10 +59,14 @@
     <Compile Include="Map\Tile.cs" />
     <Compile Include="Tiles\Grass.cs" />
     <Compile Include="Tiles\Trees.cs" />
+    <Compile Include="Engine\PlayerController.cs" />
+    <Compile Include="MonoGame\ViewBackgroundColor.cs" />
     <Compile Include="MonoGame\LoadedTexture.cs" />
+    <Compile Include="MonoGame\RectangleTexture.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\CharacterSampleView.cs" />
+    <Compile Include="Views\PlayerSampleView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -69,6 +76,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\Link.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Images\Grass.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
