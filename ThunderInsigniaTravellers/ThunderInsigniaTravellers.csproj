@@ -24,7 +24,7 @@
     <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Noah\AppData\Local\Temp\vsEEBE.tmp\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Noah\AppData\Local\Temp\vs66B7.tmp\x86\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Noah\AppData\Local\Temp\vsEEBE.tmp\x86\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Noah\AppData\Local\Temp\vs66B7.tmp\x86\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
@@ -42,6 +42,12 @@
   <ItemGroup>
     <Compile Include="Engine\GameInstance.cs" />
     <Compile Include="Engine\IGame.cs" />
+    <Compile Include="Characters\ArcherEnemy.cs" />
+    <Compile Include="Characters\Gaius.cs" />
+    <Compile Include="Characters\Gregor.cs" />
+    <Compile Include="Characters\PegasusEnemy.cs" />
+    <Compile Include="Characters\SingleFrameCharacter.cs" />
+    <Compile Include="Engine\IGameObject.cs" />
     <Compile Include="Engine\IGameView.cs" />
     <Compile Include="Engine\INavigator.cs" />
     <Compile Include="Engine\MainGame.cs" />
@@ -49,6 +55,7 @@
     <Compile Include="MonoGame\LoadedTexture.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\CharacterSampleView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -62,6 +69,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Images\Trees.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\archer-3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\gaius-1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\gregor-2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Images\pegasus-1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.ico" />
