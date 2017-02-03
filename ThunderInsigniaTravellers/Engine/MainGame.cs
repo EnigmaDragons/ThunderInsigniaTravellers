@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ThunderInsigniaTravellers.Engine;
-using ThunderInsigniaTravellers.MonoGame;
 using ThunderInsigniaTravellers.Views;
 
 namespace ThunderInsigniaTravellers
@@ -11,10 +10,6 @@ namespace ThunderInsigniaTravellers
     {
         private SpriteBatch _sprites;
         private IGameView _currentView;
-        private Texture2D _spriteSheet;
-        private Rectangle _spriteLoc = new Rectangle(87, 10, 112 - 87, 30);
-        private MouseState _prevState = Mouse.GetState();
-        private PlayerController _player = new PlayerController(new Vector2());
 
         public MainGame()
         {
@@ -25,7 +20,8 @@ namespace ThunderInsigniaTravellers
         protected override void Initialize()
         {
             new GameInstance().SetGame(this);
-            _currentView = new GrassLands();
+            _currentView = new PlayerSampleView();
+
             base.Initialize();
             IsMouseVisible = true;
         }
@@ -33,7 +29,6 @@ namespace ThunderInsigniaTravellers
         protected override void LoadContent()
         {
             _sprites = new SpriteBatch(GraphicsDevice);
-            _spriteSheet = new LoadedTexture("Link").Get();
             _currentView?.LoadContent();
         }
 
@@ -41,7 +36,6 @@ namespace ThunderInsigniaTravellers
         {
             Content.Unload();
             _currentView?.UnloadContent();
-            _spriteSheet.Dispose();
         }
 
         protected override void Update(GameTime gameTime)
@@ -49,21 +43,14 @@ namespace ThunderInsigniaTravellers
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            var state = Mouse.GetState();
-            if (state.LeftButton == ButtonState.Released && _prevState.LeftButton == ButtonState.Pressed)
-                _player.MoveTo(new Vector2(state.Position.X, state.Position.Y));
-            _player.Update(gameTime);
             _currentView?.Update(gameTime);
-            _prevState = state;
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
             _sprites.Begin();
             _currentView?.Draw(_sprites);
-            _sprites.Draw(_spriteSheet, _player.Position, _spriteLoc, Color.White);
             _sprites.End();
             base.Draw(gameTime);
         }

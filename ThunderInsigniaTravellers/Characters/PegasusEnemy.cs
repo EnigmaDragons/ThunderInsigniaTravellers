@@ -1,10 +1,9 @@
-﻿using Microsoft.Xna.Framework;
-
+﻿
 namespace ThunderInsigniaTravellers.Characters
 {
     public sealed class PegasusEnemy : SingleFrameCharacter
     {
-        public PegasusEnemy(Game game) 
-            : base(game, "pegasus-1") { }
+        public PegasusEnemy() 
+            : base("pegasus-1") { }
     }
 }
