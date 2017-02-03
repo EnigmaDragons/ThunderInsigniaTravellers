@@ -69,8 +69,12 @@ namespace ThunderInsigniaTravellers.Map
 
         public Character GetOptionalCharacter(Tile location)
         {
-            if (location.X > 0 && location.Y > 0)
-                return internalMap[location.X, location.Y].OfType<Character>().FirstOrDefault();
+            try
+            {
+                if (location.X > 0 && location.X < 16 && location.Y > 0 && location.Y < 16)
+                    return internalMap[location.X, location.Y].OfType<Character>().FirstOrDefault();
+            }
+            finally { }
             return null;
         }
 
