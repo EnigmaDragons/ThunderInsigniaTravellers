@@ -24,7 +24,7 @@
     <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Noah\AppData\Local\Temp\vs66B7.tmp\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\THEOCO~1\AppData\Local\Temp\vsCF79.tmp\x86\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -34,15 +34,20 @@
     <DefineConstants>TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <IntermediateOutputPath>C:\Users\Noah\AppData\Local\Temp\vs66B7.tmp\x86\Release\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\THEOCO~1\AppData\Local\Temp\vsCF79.tmp\x86\Release\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Characters\EnemyHighlightColor.cs" />
+    <Compile Include="Characters\PlayerHighlightColor.cs" />
     <Compile Include="Engine\GameInstance.cs" />
+    <Compile Include="Engine\GraphicsDeviceInstance.cs" />
     <Compile Include="Engine\IGame.cs" />
     <Compile Include="Characters\ArcherEnemy.cs" />
+    <Compile Include="Characters\Character.cs" />
+    <Compile Include="Characters\Highlighted.cs" />
     <Compile Include="Characters\Gaius.cs" />
     <Compile Include="Characters\Gregor.cs" />
     <Compile Include="Characters\PegasusEnemy.cs" />
@@ -51,8 +56,10 @@
     <Compile Include="Engine\IGameView.cs" />
     <Compile Include="Engine\INavigator.cs" />
     <Compile Include="Engine\MainGame.cs" />
+    <Compile Include="MonoGame\ViewBackgroundColor.cs" />
     <Compile Include="Views\GrassLands.cs" />
     <Compile Include="MonoGame\LoadedTexture.cs" />
+    <Compile Include="MonoGame\RectangleTexture.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\CharacterSampleView.cs" />

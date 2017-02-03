@@ -20,7 +20,8 @@ namespace ThunderInsigniaTravellers
         protected override void Initialize()
         {
             new GameInstance().SetGame(this);
-            _currentView = new GrassLands();
+            _currentView = new CharacterSampleView();
+
             base.Initialize();
         }
 

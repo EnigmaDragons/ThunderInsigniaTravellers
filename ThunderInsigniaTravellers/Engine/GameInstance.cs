@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace ThunderInsigniaTravellers.Engine
 {
@@ -20,5 +16,7 @@ namespace ThunderInsigniaTravellers.Engine
         {
             return gameInstance.Content.Load<T>(resourceName);
         }
+
+        public GraphicsDevice Graphics => gameInstance.GraphicsDevice;
     }
 }
