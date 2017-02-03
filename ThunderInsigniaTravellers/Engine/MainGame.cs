@@ -1,11 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using ThunderInsigniaTravellers.Engine;
+using ThunderInsigniaTravellers.Map;
 using ThunderInsigniaTravellers.MonoGame;
-using ThunderInsigniaTravellers.Views;
 
-namespace ThunderInsigniaTravellers
+
+namespace ThunderInsigniaTravellers.Engine
 {
     public class MainGame : Game, INavigator
     {
@@ -22,7 +22,7 @@ namespace ThunderInsigniaTravellers
         protected override void Initialize()
         {
             new GameInstance().SetGame(this);
-            _currentView = new Map();
+            _currentView = new HighlightedMap(Map.Map.Create());
             base.Initialize();
             IsMouseVisible = true;
         }

@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ThunderInsigniaTravellers.Characters;
+using ThunderInsigniaTravellers.Engine;
 using ThunderInsigniaTravellers.Tiles;
+using System.Linq;
+using ThunderInsigniaTravellers.MonoGame;
+using ThunderInsigniaTravellers.Player;
 
-namespace ThunderInsigniaTravellers.Engine
+namespace ThunderInsigniaTravellers.Map
 {
     public class Map : IGameView
     {
@@ -25,6 +30,8 @@ namespace ThunderInsigniaTravellers.Engine
 
         public void Put(IGameObject obj, Tile loc)
         {
+            if (obj is Character)
+                ((Character)obj).SetPosition(loc);
             internalMap[loc.X, loc.Y].Add(obj);
         }
 
@@ -58,6 +65,23 @@ namespace ThunderInsigniaTravellers.Engine
             for (int row = 0; row < 15; row++)
                 for (int column = 0; column < 15; column++)
                     internalMap[row, column].ForEach(action);
+        }
+
+        public Character GetOptionalCharacter(Tile location)
+        {
+            if (location.X > 0 && location.Y > 0)
+                return internalMap[location.X, location.Y].OfType<Character>().FirstOrDefault();
+            return null;
+        }
+
+        public static Map Create()
+        {
+            var map = new Map();
+            map.Put(new Gaius(), new Tile(7, 12));
+            map.Put(new Gregor(), new Tile(8, 13));
+            map.Put(new PegasusEnemy(), new Tile(6, 13));
+            map.Put(new ArcherEnemy(), new Tile(7, 14));
+            return map;
         }
     }
 }

@@ -1,10 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using ThunderInsigniaTravellers.Engine;
+﻿using ThunderInsigniaTravellers.Engine;
+using ThunderInsigniaTravellers.Map;
 
 namespace ThunderInsigniaTravellers.Characters
 {
     public interface Character : IGameObject
     {
-        void SetPosition(Vector2 position);
+        void SetPosition(Tile position);
     }
 }

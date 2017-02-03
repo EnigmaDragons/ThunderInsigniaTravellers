@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using ThunderInsigniaTravellers.Map;
 
 namespace ThunderInsigniaTravellers.Engine
 {
@@ -6,6 +7,9 @@ namespace ThunderInsigniaTravellers.Engine
     {
         private int x;
         private int y;
+
+        public ScreenPosition(Tile tile) 
+            : this(tile.X, tile.Y) { }
 
         public ScreenPosition(int x, int y)
         {
