@@ -12,8 +12,8 @@ namespace ThunderInsigniaTravellers.Engine
 
         public Map()
         {
-            for (int row = 0; row < 16; row++)
-                for (int column = 0; column < 16; column++) 
+            for (int row = 0; row < 15; row++)
+                for (int column = 0; column < 15; column++) 
                     internalMap[row, column] = new List<IGameObject> { new Grass(row, column) };
         }
 
@@ -55,8 +55,8 @@ namespace ThunderInsigniaTravellers.Engine
 
         private void ForEach(Action<IGameObject> action)
         {
-            for (int row = 0; row < 16; row++)
-                for (int column = 0; column < 16; column++)
+            for (int row = 0; row < 15; row++)
+                for (int column = 0; column < 15; column++)
                     internalMap[row, column].ForEach(action);
         }
     }

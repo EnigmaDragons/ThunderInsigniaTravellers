@@ -2,12 +2,14 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ThunderInsigniaTravellers.Engine;
+using ThunderInsigniaTravellers.MonoGame;
 using ThunderInsigniaTravellers.Views;
 
 namespace ThunderInsigniaTravellers
 {
     public class MainGame : Game, INavigator
     {
+        private Texture2D background;
         private SpriteBatch _sprites;
         private IGameView _currentView;
 
@@ -28,6 +30,7 @@ namespace ThunderInsigniaTravellers
         protected override void LoadContent()
         {
             _sprites = new SpriteBatch(GraphicsDevice);
+            background = new LoadedTexture("Background").Get();
             _currentView?.LoadContent();
         }
 
@@ -49,6 +52,7 @@ namespace ThunderInsigniaTravellers
         protected override void Draw(GameTime gameTime)
         {
             _sprites.Begin();
+            _sprites.Draw(background, new Rectangle(0, 0, 32 * 15, 32 * 15), Color.White);
             _currentView?.Draw(_sprites);
             _sprites.End();
             base.Draw(gameTime);
