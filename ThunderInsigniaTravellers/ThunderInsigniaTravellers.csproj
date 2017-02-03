@@ -56,11 +56,12 @@
     <Compile Include="Engine\MainGame.cs" />
     <Compile Include="Map\Map.cs" />
     <Compile Include="Engine\ScreenPosition.cs" />
-    <Compile Include="Map\Tile.cs" />
     <Compile Include="Tiles\Grass.cs" />
     <Compile Include="Tiles\Trees.cs" />
     <Compile Include="Engine\PlayerController.cs" />
     <Compile Include="MonoGame\ViewBackgroundColor.cs" />
+    <Compile Include="Map\Tile.cs" />
+    <Compile Include="Player\PlayerCommands.cs" />
     <Compile Include="MonoGame\LoadedTexture.cs" />
     <Compile Include="MonoGame\RectangleTexture.cs" />
     <Compile Include="Program.cs" />
