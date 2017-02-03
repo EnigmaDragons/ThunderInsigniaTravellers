@@ -1,23 +1,22 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ThunderInsigniaTravellers.Engine;
 
 namespace ThunderInsigniaTravellers.MonoGame
 {
     public class LoadedTexture
     {
-        private readonly Game game;
-        private readonly string textureName;
-        private const string ImageFolder = "Images\\";
+        private readonly string _textureName;
+        private const string ImageFolder = "Images/";
 
-        public LoadedTexture(Game game, string textureName)
+        public LoadedTexture(string textureName)
         {
-            this.game = game;
-            this.textureName = textureName;
+            _textureName = textureName;
         }
 
         public Texture2D Get()
         {
-            return game.Content.Load<Texture2D>(ImageFolder + textureName);
+            return new GameInstance().Load<Texture2D>(ImageFolder + _textureName);
         }
     }
 }

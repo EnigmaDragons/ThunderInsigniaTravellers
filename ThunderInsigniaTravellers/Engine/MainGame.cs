@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ThunderInsigniaTravellers.Engine;
 using ThunderInsigniaTravellers.MonoGame;
+using ThunderInsigniaTravellers.Views;
 
 namespace ThunderInsigniaTravellers
 {
@@ -23,6 +24,8 @@ namespace ThunderInsigniaTravellers
 
         protected override void Initialize()
         {
+            new GameInstance().SetGame(this);
+            _currentView = new GrassLands();
             base.Initialize();
             IsMouseVisible = true;
         }
@@ -30,7 +33,7 @@ namespace ThunderInsigniaTravellers
         protected override void LoadContent()
         {
             _sprites = new SpriteBatch(GraphicsDevice);
-            _spriteSheet = new LoadedTexture(this, "Link").Get();
+            _spriteSheet = new LoadedTexture("Link").Get();
             _currentView?.LoadContent();
         }
 
