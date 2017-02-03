@@ -18,7 +18,7 @@ namespace ThunderInsigniaTravellers.Player
 
         public void Select(Tile location)
         {
-            if (CharacterIsSelected)
+            if (CharacterIsSelected())
                 MoveSelectedCharacterTo(location);
             SelectCharacterAt(location);
         }
@@ -27,7 +27,7 @@ namespace ThunderInsigniaTravellers.Player
         {
             _selectedCharacter = _map.GetMap().GetOptionalCharacter(location);
             _selectedTile = location;
-            if (CharacterIsSelected)
+            if (CharacterIsSelected())
                 _map.SetHighlights(new List<Tile>
                 {
                     location.Plus(-1, 0),
@@ -40,6 +40,7 @@ namespace ThunderInsigniaTravellers.Player
         private void MoveSelectedCharacterTo(Tile destination)
         {
             _map.GetMap().Move(_selectedCharacter, _selectedTile, destination);
+            _selectedCharacter.SetPosition(destination);
             ClearSelection();
         }
 
@@ -49,7 +50,11 @@ namespace ThunderInsigniaTravellers.Player
             _selectedCharacter = null;
         }
 
-        public bool CharacterIsSelected => _selectedCharacter != null && _selectedTile != null;
+        public bool CharacterIsSelected()
+        {
+            return _selectedCharacter != null && _selectedTile != null;
+        }
+
     }
 }
 
