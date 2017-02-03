@@ -12,10 +12,13 @@ namespace ThunderInsigniaTravellers.Engine
         private Texture2D background;
         private SpriteBatch _sprites;
         private IGameView _currentView;
+        private GraphicsDeviceManager _graphicsManager;
 
         public MainGame()
         {
-            new GraphicsDeviceManager(this);
+            _graphicsManager = new GraphicsDeviceManager(this);
+            _graphicsManager.PreferredBackBufferWidth = 480;
+            _graphicsManager.PreferredBackBufferHeight = 480;
             Content.RootDirectory = "Content";
         }
 
@@ -52,7 +55,7 @@ namespace ThunderInsigniaTravellers.Engine
         protected override void Draw(GameTime gameTime)
         {
             _sprites.Begin();
-            _sprites.Draw(background, new Rectangle(0, 0, 32 * 15, 32 * 15), Color.White);
+            _sprites.Draw(background, new Rectangle(-2, 1, 32 * 15, 32 * 15), Color.White);
             _currentView?.Draw(_sprites);
             _sprites.End();
             base.Draw(gameTime);
