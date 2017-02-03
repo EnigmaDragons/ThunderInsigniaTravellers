@@ -5,18 +5,19 @@ namespace ThunderInsigniaTravellers.MonoGame
 {
     public class LoadedTexture
     {
-        private readonly Game _game;
-        private readonly string _textureName;
+        private readonly Game game;
+        private readonly string textureName;
+        private const string ImageFolder = "Images\\";
 
         public LoadedTexture(Game game, string textureName)
         {
-            _game = game;
-            _textureName = textureName;
+            this.game = game;
+            this.textureName = textureName;
         }
 
         public Texture2D Get()
         {
-            return _game.Content.Load<Texture2D>(_textureName);
+            return game.Content.Load<Texture2D>(ImageFolder + textureName);
         }
     }
 }
