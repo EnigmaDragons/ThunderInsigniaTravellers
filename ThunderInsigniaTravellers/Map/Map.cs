@@ -17,8 +17,8 @@ namespace ThunderInsigniaTravellers.Map
 
         public Map()
         {
-            for (int row = 0; row < 16; row++)
-                for (int column = 0; column < 16; column++) 
+            for (int row = 0; row < 15; row++)
+                for (int column = 0; column < 15; column++) 
                     internalMap[row, column] = new List<IGameObject> { new Grass(row, column) };
         }
 
@@ -62,8 +62,8 @@ namespace ThunderInsigniaTravellers.Map
 
         private void ForEach(Action<IGameObject> action)
         {
-            for (int row = 0; row < 16; row++)
-                for (int column = 0; column < 16; column++)
+            for (int row = 0; row < 15; row++)
+                for (int column = 0; column < 15; column++)
                     internalMap[row, column].ForEach(action);
         }
 
@@ -77,10 +77,10 @@ namespace ThunderInsigniaTravellers.Map
         public static Map Create()
         {
             var map = new Map();
-            map.Put(new Gaius(), new Tile(1, 1));
-            map.Put(new Gregor(), new Tile(2, 2));
-            map.Put(new PegasusEnemy(), new Tile(3, 3));
-            map.Put(new ArcherEnemy(), new Tile(4, 4));
+            map.Put(new Gaius(), new Tile(7, 12));
+            map.Put(new Gregor(), new Tile(8, 13));
+            map.Put(new PegasusEnemy(), new Tile(6, 13));
+            map.Put(new ArcherEnemy(), new Tile(7, 14));
             return map;
         }
     }

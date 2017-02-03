@@ -33,7 +33,7 @@ namespace ThunderInsigniaTravellers.Tiles
 
         public void Draw(SpriteBatch sprites)
         {
-            sprites.Draw(texture, new ScreenPosition(x, y).Get(), Color.White);
+            //sprites.Draw(texture, new ScreenPosition(x, y).Get(), Color.White);
         }
     }
 }
