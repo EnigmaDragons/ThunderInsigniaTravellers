@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ThunderInsigniaTravellers.Engine;
 using ThunderInsigniaTravellers.MonoGame;
 
 namespace ThunderInsigniaTravellers.Characters
@@ -42,10 +43,11 @@ namespace ThunderInsigniaTravellers.Characters
             _character.Draw(sprites);
         }
 
-        public void SetPosition(Vector2 position)
+        public void SetPosition(Tile tile)
         {
-            _position = position;
-            _character.SetPosition(position);
+            var rect = new ScreenPosition(tile.X, tile.Y);
+            _position = new Vector2(rect.Get().X, rect.Get().Y);
+            _character.SetPosition(tile);
         }
     }
 }

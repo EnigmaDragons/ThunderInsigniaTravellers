@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using ThunderInsigniaTravellers.Characters;
 using ThunderInsigniaTravellers.Engine;
 using ThunderInsigniaTravellers.Views;
 
@@ -21,6 +22,12 @@ namespace ThunderInsigniaTravellers
         {
             new GameInstance().SetGame(this);
             _currentView = new Map();
+            var asMap = (Map)_currentView;
+            asMap.Put(new Gaius(), new Tile(1, 1));
+            asMap.Put(new Gregor(), new Tile(2, 2));
+            asMap.Put(new PegasusEnemy(), new Tile(3, 3));
+            asMap.Put(new ArcherEnemy(), new Tile(4, 4));
+
             base.Initialize();
             IsMouseVisible = true;
         }

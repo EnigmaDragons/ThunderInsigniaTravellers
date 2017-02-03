@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ThunderInsigniaTravellers.Tiles;
+using ThunderInsigniaTravellers.Characters;
 
 namespace ThunderInsigniaTravellers.Engine
 {
@@ -25,6 +26,8 @@ namespace ThunderInsigniaTravellers.Engine
 
         public void Put(IGameObject obj, Tile loc)
         {
+            if (obj is Character)
+                ((Character)obj).SetPosition(loc);
             internalMap[loc.X, loc.Y].Add(obj);
         }
 
