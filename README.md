@@ -13,4 +13,4 @@ Game Hack Nite - 2/2/2017 - Created in 3.5 hrs.
 <strong>Contributors</strong>:
 - SilasReinagel
 - ZavixDragon
--ThePhantomStranger
+- ThePhantomStranger
